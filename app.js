@@ -1,15 +1,31 @@
 
-const os = require('os');
+const fs = require('fs');
 
-var totalMemory = os.totalmem()
-var freeMemory = os.freemem()
+// const files = fs.readdirSync('./');
+// console.log(files)
 
-// template string
-// ES6 /ES2015 : ECMAScript 6
-console.log(`Total Memory: ${totalMemory}`);
-console.log(`Free Memory: ${freeMemory}`);
+fs.readdir('./', function(err, files) {
+    if (err) console.log('Error', err);
+    else console.log('Result', files);
+});
 
 
+
+
+
+
+
+
+
+
+// os demo
+// const os = require('os');
+// var totalMemory = os.totalmem()
+// var freeMemory = os.freemem()
+// // template string
+// // ES6 /ES2015 : ECMAScript 6
+// console.log(`Total Memory: ${totalMemory}`);
+// console.log(`Free Memory: ${freeMemory}`);
 
 // path module demo
 // const path = require('path');
