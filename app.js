@@ -1,22 +1,28 @@
 
-const fs = require('fs');
+const EventEmitter = require('events'); // class
+const emitter = new EventEmitter(); // object - an instance of a class
 
-// const files = fs.readdirSync('./');
-// console.log(files)
-
-fs.readdir('./', function(err, files) {
-    if (err) console.log('Error', err);
-    else console.log('Result', files);
+// register a listener
+emitter.on('messageLogged', function(){
+    console.log('Listener called');
 });
 
+emitter.emit('messageLogged')
+// making a noise, produce - signalling
 
 
 
 
 
 
-
-
+// fs demo
+// const fs = require('fs');
+// // const files = fs.readdirSync('./');
+// // console.log(files)
+// fs.readdir('./', function(err, files) {
+//     if (err) console.log('Error', err);
+//     else console.log('Result', files);
+// });
 
 // os demo
 // const os = require('os');
